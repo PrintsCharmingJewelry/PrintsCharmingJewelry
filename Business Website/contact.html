@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<style>
+	td 4{
+  	padding:50px;
+	
+
+	}
+	
+	table,th,td{
+	
+	border: 1px solid black;
+	background-color: white;
+	}
+</style>
+	<head>
+		<title>Prints Charming</title>
+	  <link href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/paper/bootstrap.min.css' rel='stylesheet'>
+	  <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link href="StyleSheet.css" rel="stylesheet" type="text/css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	
+		<script>
+		function hoverChangeColor(x){
+	      if (x==1){
+	        document.getElementById("home").style.background="navy"
+	      }else if(x==2){
+	        document.getElementById("store").style.background="navy"
+	      }else if(x==3){
+	        document.getElementById("Custom_Order").style.background="navy"
+	      }else if(x==4){
+	        document.getElementById("contact").style.background="navy"
+	      }else{
+	
+	      }
+	    }
+	    function unHoverChangeColor(){
+
+	      document.getElementById("store").style.background="blue";
+	      document.getElementById("Custom_Order").style.background="blue";
+	      document.getElementById("home").style.background="blue";
+	    }	
+		</script>
+	    </head>
+	      <body>
+		  <div align="center" style="background-color:black;padding:30px;	">
+	        <img  src="BusinessLogo.jpg" alt="logo" style="float:left; padding-right: 20px;"height=50px  />
+	        <span id="home" onMouseOver="hoverChangeColor(1);" onMouseOut="unHoverChangeColor();" ><a href="Home.html">Home</a></span>
+	        <span id="store" onMouseOver="hoverChangeColor(2);" onMouseOut="unHoverChangeColor();"><a href="store.html">Store</a></span>
+	        <span id="Custom_Order" onMouseOver="hoverChangeColor(3);" onMouseOut="unHoverChangeColor();" ><a href="Custom_Order.html">Order Now</a></span>
+	        <span id="contact" onMouseOver="hoverChangeColor(4);" onMouseOut="unHoverChangeColor();" style="background-color: navy;" >Contact Us</span>
+	        </div>
+			<br>
+	        <br>
+	        <br>
+	        <br>
+			<div align="center" >
+			<form method="post" action="mailto:hilgartnerjl@s.dcsdk12.org">
+				<table style="border:1px solid black">
+					<tr>
+						<td style="padding-left:10px; border:1px solid black">Full Name: <input type="text" name="first_name" rows="1" cols="100" required></td>
+					
+					</tr>
+					<tr>
+						<td style="padding-left:10px; border:1px solid black">Email: <input type="text" name="email_address" rows="1" cols="100"> </td>
+					</tr>
+					<tr>
+						<td style="padding-left:10px; border:1px solid black">Message: <textarea style="display:block;" name="comments" rows="10" cols="100"></textarea> </td>
+					</tr>
+					<tr>
+						<td align="center" ><input style="display:block;" type="submit" value="Submit"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</body>
+</html>

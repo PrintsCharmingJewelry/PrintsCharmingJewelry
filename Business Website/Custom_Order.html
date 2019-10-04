@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>Prints Charming</title>
+	  <link href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/paper/bootstrap.min.css' rel='stylesheet'>
+	  <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link href="StyleSheet.css" rel="stylesheet" type="text/css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style> img{
+			max-width:180px;
+			}
+			input[type=file]{
+			padding:10px;
+			background:navy;}
+			td {
+				padding:50px;
+			}
+	</style>
+		<script>
+		     function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+						
+					
+                };
+
+                reader.readAsDataURL(input.files[0]);
+				
+            }
+			}
+			
+			function myFunction(input) {
+				var x = document.getElementById(input);
+ 
+				x.style.display = "block";
+			}
+        
+		
+		function hoverChangeColor(x){
+	if (x==1){
+	document.getElementById("home").style.background="navy"
+	}else if(x==2){
+	document.getElementById("store").style.background="navy"
+	}else if(x==3){
+	document.getElementById("Custom_Order").style.background="navy"
+	}else if(x==4){
+	document.getElementById("contact").style.background="navy"
+	}else{
+	
+	}
+
+	
+	}
+	function unHoverChangeColor(){
+
+	document.getElementById("store").style.background="blue";
+	document.getElementById("home").style.background="blue";
+	document.getElementById("contact").style.background="blue";
+	
+
+	}	
+		</script>
+	</head>
+	<body>
+	<div align="center" style="background-color:black;padding:30px;	">
+	<img  src="BusinessLogo.jpg" alt="logo" style="float:left; padding-right: 20px;" height=50px  />
+	<span id="home" onMouseOver="hoverChangeColor(1);" onMouseOut="unHoverChangeColor();"  ><a href="Home.html">Home</a></span>
+	<span id="store" onMouseOver="hoverChangeColor(2);" onMouseOut="unHoverChangeColor();"><a href="store.html">Store</a></span>
+	<span id="Custom_Order" onMouseOver="hoverChangeColor(3);" onMouseOut="unHoverChangeColor();" style="background-color: navy;" >Order Now</span>
+	<span id="contact" onMouseOver="hoverChangeColor(4);" onMouseOut="unHoverChangeColor();"><a href="contact.html">Contact Us</a></span>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<table align="center" style="background-color:white;">
+	<tr> 
+		<td><img id="blah" src="http://placehold.it/150" alt="your image" /></td>
+		<td><input type='file' onchange="readURL(this);" onclick="myFunction('specifics');"  /></td>
+	</tr>
+	</table>
+	<br>
+	
+	<div  id="specifics" style=" display:none;">
+		<table align="center" style="background-color:white; ">
+			<tr > 
+				<td><label for="amount" >How many would you like printed?</label>
+					<input type="number" name="amount" id="amount" min="1" max="100"></td>
+				<td><label for="color">What color would you like these printed in?</label>
+					<select name="color" id="color" style="padding:10px">
+						<option value="ChooseOne" >Choose One</option>
+						<option value="grey">Grey</option>
+						<option value="blue">Blue</option>
+						<option value="black">Black</option>
+					</select>
+				</td>
+				<td><button id="checkout" name="checkout"onclick="myFunction('payments')">Checkout</button> </td>
+			</tr>
+		</table>
+	</div>
+	<br>
+	<div id="payments" style="display:none;">
+		<table align="center" style="background-color:white; ">
+			<tr>
+				<td>Subtotal: $PLACEHOLDER</td>
+			</tr>
+			<tr>
+				<td><button id="goToDelivery" name="goToDelivery" onclick="">Confirm Price</button></td>
+			</tr>
+		</table>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	</body>
+</html>
