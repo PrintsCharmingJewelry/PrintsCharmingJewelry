@@ -5,7 +5,7 @@
 This first bit sets the email address that you want the form to be submitted to.
 You will need to change this value to a valid email address that you can access.
 */
-$webmaster_email = "hilgartnerjl@s.dcsdk12.org";
+$webmaster_email = "Printscharmingjewelryllc@gmail.com";
 
 /*
 This bit sets the URLs of the supporting pages.
