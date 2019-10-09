@@ -1,5 +1,4 @@
-<html>
-<body>
+
 <?php
 /*
 This first bit sets the email address that you want the form to be submitted to.
@@ -76,5 +75,3 @@ else {
 	header( "Location: $thankyou_page" );
 }
 ?>
-</body>
-</html>
