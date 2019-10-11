@@ -50,13 +50,13 @@
 		<script>
 		function hoverChangeColor(x){
 	if (x==1){
-	document.getElementById("home").style.background="navy"
+	document.getElementById("home").style.background="#165400"
 	}else if(x==2){
-	document.getElementById("store").style.background="navy"
+	document.getElementById("store").style.background="#165400"
 	}else if(x==3){
-	document.getElementById("Custom_Order").style.background="navy"
+	document.getElementById("Custom_Order").style.background="#165400"
 	}else if(x==4){
-	document.getElementById("contact").style.background="navy"
+	document.getElementById("contact").style.background="#165400"
 	}else{
 	
 	}
@@ -65,9 +65,9 @@
 	}
 	function unHoverChangeColor(){
 
-	document.getElementById("home").style.background="blue";
-	document.getElementById("Custom_Order").style.background="blue";
-	document.getElementById("contact").style.background="blue";
+	document.getElementById("home").style.background="green";
+	document.getElementById("Custom_Order").style.background="green";
+	document.getElementById("contact").style.background="green";
 	
 
 	}	
@@ -78,7 +78,7 @@
 		<div align="center" style="background-color:black;padding:30px;	">
 			<img  src="BusinessLogo.png" alt="logo" style="float:left; padding-right: 20px;" height=50px  />
 			<span id="home" onMouseOver="hoverChangeColor(1);" onMouseOut="unHoverChangeColor();"  ><a href="index.html">Home</a></span>
-			<span id="store" onMouseOver="hoverChangeColor(2);" onMouseOut="unHoverChangeColor();" style="background-color: navy;">Store</span>
+			<span id="store" onMouseOver="hoverChangeColor(2);" onMouseOut="unHoverChangeColor();" style="background-color: #165400;">Store</span>
 			<span id="Custom_Order" onMouseOver="hoverChangeColor(3);" onMouseOut="unHoverChangeColor();"  ><a href="Custom_Order.html">Order Now</a></span>
 			<span id="contact" onMouseOver="hoverChangeColor(4);" onMouseOut="unHoverChangeColor();"><a href="contact.html">Contact Us</a></span>
 		</div>
