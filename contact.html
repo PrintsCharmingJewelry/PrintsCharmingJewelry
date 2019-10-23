@@ -23,6 +23,13 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	
 		<script>
+		function on() {
+	  		document.getElementById("overlay").style.display = "block";
+		}
+
+		function off() {
+  			document.getElementById("overlay").style.display = "none";
+		}
 		function hoverChangeColor(x){
 	      if (x==1){
 	        document.getElementById("home").style.background="#165400"
@@ -70,9 +77,12 @@
 						<td style="padding-left:10px; border:1px solid black">Message: <textarea style="display:block;" name="comments" rows="10" cols="100"></textarea> </td>
 					</tr>
 					<tr>
-						<td align="center" ><input style="display:block;" type="submit" value="Submit"></td>
+						<td align="center" ><input style="display:block;" type="submit" value="Submit" onclick="on()"></td>
 					</tr>
 				</table>
+				<div id="overlay" onclick="off()">
+  					<div id="text">Overlay Text</div>
+				</div>
 			</form>
 		</div>
 	</body>
