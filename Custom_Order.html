@@ -114,7 +114,7 @@
 	<table align="center" style="background-color:white;">
 	<tr> 
 		<td><img id="blah" src="http://placehold.it/150" alt="your image" /></td>
-		<td><input type='file' onchange="readURL(this);" onclick="myFunction('specifics');" style=" background-color:green;" accept='.svg' /></td>
+		<td><input type='file' onchange="readURL(this);" onclick="myFunction('specifics');" style=" background-color:green;" accept='.svg' required/></td>
 	</tr>
 	</table>
 	<br>
@@ -123,16 +123,16 @@
 		<table align="center" style="background-color:white; ">
 			<tr > 
 				<td><label for="amount" >How many would you like printed?</label>
-					<input type="number" name="amount" id="amount" min="5" max="200"></td>
+					<input type="number" name="amount" id="amount" min="5" max="200" required></td>
 				<td><label for="color">What color would you like these printed in?</label>
-					<select name="color" id="color" style="padding:10px">
+					<select name="color" id="color" style="padding:10px" required>
 						<option value="ChooseOne" >Choose One</option>
 						<option value="grey">Brown</option>
 						<option value="blue">Blue</option>
 						<option value="black">Black</option>
 					</select>
 				</td>
-				<td><button id="checkout" name="checkout"onclick="myFunction('payments')">Checkout</button> </td>
+				<td><button id="checkout" name="checkout"onclick="myFunction('payments')">next step</button> </td>
 			</tr>
 		</table>
 	</div>
@@ -141,19 +141,19 @@
 		<table align="center" style="background-color:white; ">
 			<tr>
 				<td><label for="Homeaddress">Home Shipping Address:</label></td>
-				<td><input name= "Homeaddress" id="Homeaddress" type="text"></td>
+				<td><input name= "Homeaddress" id="Homeaddress" type="text" required></td>
 			</tr>
 			<tr>
 				<td><label for="City">City:</label></td>
-				<td><input name= "City" id="City" type="text"></td>
+				<td><input name= "City" id="City" type="text" required></td>
 			</tr>
 			<tr>
 				<td><label for="State">State:</label></td>
-				<td><input name= "State" id="State" type="text"></td>
+				<td><input name= "State" id="State" type="text" required></td>
 			</tr>
 			<tr>
 				<td><label for="Zipcode">Zipcode:</label></td>
-				<td><input name= "Zipcode" id="Zipcode" type="text"></td>
+				<td><input name= "Zipcode" id="Zipcode" type="text" required></td>
 			</tr>
 			<tr>
 				<td><button style="display:block;" type="submit" value="Submit" onclick="on()">Order Now</button></td>
