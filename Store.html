@@ -50,8 +50,8 @@
 	
 		<script>
 			function sendImage(image){
-				localStorage["image"] = image;
-				
+				localStorage.setItem("image", image);
+				window.location.href="Custom_Order.html"
 			}
 		function hoverChangeColor(x){
 	if (x==1){
