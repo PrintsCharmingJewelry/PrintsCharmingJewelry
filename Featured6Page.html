@@ -43,24 +43,6 @@
 }
 	</style>
 		<script>
-
-		     function readURL(input) {
-			
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#blah')
-                        .attr('src', e.target.result);
-							
-                };
-
-                reader.readAsDataURL(input.files[0]);
-				
-            }
-        }
-			
-			
 			function myFunction(input) {
 				var x = document.getElementById(input);
  
@@ -103,37 +85,7 @@
 		function off() {
   			document.getElementById("overlay").style.display = "none";
 		}
-		function getImage(){
-				var urlParams = new URLSearchParams(window.location.search);
-				var image = urlParams.get("imageSent");
-				if(image== "dragon"){
-					document.getElementById("blah").src = Feat6.jpg;
-				}
-			}
 
-			function processUser()
-  {
-    var parameters = location.search.substring(1).split("&");
-
-    var temp = parameters[0].split("=");
-    l = temp[1]
-    document.getElementById("imageToPrint").innerHTML = l;
-    document.getElementById("blah").innerHTML = l;
-   
-  }
-
-  var locate = window.location;
-  document.joe.burns.value=locate;
-
-  var text = document.joe.burns.value;
-
-  function delineate(str){
-  		theleft = str.indexOf("=")+1;
-  		theright = str.lastIndexOf("&");
-  		return(str.substring(theleft,theright));
-	}	
-
-	document.getElementById("blah").src = Feat6.JPG;
 	</script>
 	</head>
 	<body>
