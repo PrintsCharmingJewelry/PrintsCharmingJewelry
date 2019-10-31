@@ -44,8 +44,6 @@
 	</style>
 		<script>
 
-			
-
 		     function readURL(input) {
 			
             if (input.files && input.files[0]) {
@@ -54,8 +52,7 @@
                 reader.onload = function (e) {
                     $('#blah')
                         .attr('src', e.target.result);
-						
-					
+							
                 };
 
                 reader.readAsDataURL(input.files[0]);
@@ -131,12 +128,12 @@
 	<table align="center" style="background-color:white;">
 	<tr> 
 		<td><img id="blah" src="http://placehold.it/150" alt="your image" /></td>
-		<td><input type='file' name="imageToPrint" id="imageToPrint"  onchange="readURL(this);" onclick="myFunction('specifics');" style=" background-color:white;" accept='.svg' required/></td>
+		<td><input type='file' name="imageToPrint" id="imageToPrint"  onchange="readURL(this);"  style=" background-color:white;" accept='.svg' required/></td>
 	</tr>
 	</table>
 	<br>
 	
-	<div  id="specifics" style=" display:none;">
+	<div  id="specifics" style=" display:block;">
 		<table align="center" style="background-color:white; ">
 			<tr > 
 				<td><label for="amount" >How many would you like printed?</label>
