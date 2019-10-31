@@ -110,6 +110,16 @@
 					document.getElementById("blah").src = Feat6.jpg;
 				}
 			}
+
+			function processUser()
+  {
+    var parameters = location.search.substring(1).split("&");
+
+    var temp = parameters[0].split("=");
+    l = temp[1]
+    document.getElementById("imageToPrint").innerHTML = l;
+   
+  }
 		</script>
 	</head>
 	<body onLoad="getImage()">
@@ -124,7 +134,7 @@
 	<br>
 	<br>
 	<br>
-	<form method="POST" id="customOrder" name="customOrder" action="mailto:printscharmingjewelryllc@gmail.com;">
+	<form method="get" id="customOrder" name="customOrder" action="mailto:printscharmingjewelryllc@gmail.com;">
 	<table align="center" style="background-color:white;">
 	<tr> 
 		<td><img id="blah" src="http://placehold.it/150" alt="your image" /></td>
@@ -165,7 +175,8 @@
 				<td><input name= "Zipcode" id="Zipcode" type="text" required></td>
 			</tr>
 			<tr>
-				<td><button style="display:block;" onclick="submitForm()" >Order Now</button></td>
+
+				<td><button type="submit"></button> <button style="display:block;" onclick="submitForm()" >Order Now</button></td>
 			</tr>
 		</table>
 		<div id="overlay" onclick="off()">
