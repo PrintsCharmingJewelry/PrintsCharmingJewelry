@@ -44,13 +44,14 @@
 	</style>
 		<script>
 
-			function processImages(){
+			function onload(){
 				var urlParams = new URLSearchParams(window.location.search);
 				var image = urlParams.get("imageToPrint");
 				if(image== 'dragon'){
 					document.getElementById("imageToPrint").value = "Feat6.JPG"
 				}
 			}
+
 		     function readURL(input) {
 			}
             if (input.files && input.files[0]) {
