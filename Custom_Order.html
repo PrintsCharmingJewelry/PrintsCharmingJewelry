@@ -20,7 +20,7 @@
 				padding:50px;
 			}
 			#text{
-  position: absolute;
+ 			 position: absolute;
   top: 50%;
   left: 50%;
   font-size: 50px;
@@ -106,8 +106,7 @@
 		
 	</script>
 	</head>
-	<body onLoad="processUser()">
-<form name="joe"><input type="hidden" name="burns"></form>
+	<body>
 	<div align="center" style="background-color:black;padding:30px;	">
 	<img  src="BusinessLogo.png" alt="logo" style="float:left; padding-right: 20px;" height=50px  />
 	<span id="home" onMouseOver="hoverChangeColor(1);" onMouseOut="unHoverChangeColor();"  ><a href="index.html">Home</a></span>
@@ -119,15 +118,16 @@
 	<br>
 	<br>
 	<br>
-	<form method="get" id="customOrder" name="customOrder" action="mailto:printscharmingjewelryllc@gmail.com;">
-	<table align="center" style="background-color:white;">
-	<tr> 
-		<td><img id="blah" src="http://placehold.it/150" alt="your image" /></td>
-		<td><input type='file' name="imageToPrint" id="imageToPrint"  onchange="readURL(this);"  style=" background-color:white;" accept='.svg' required/></td>
-	</tr>
-	</table>
-	<br>
 	
+
+	<form method="get" id="customOrder" name="customOrder" action="mailto:printscharmingjewelryllc@gmail.com;">
+		<table align="center" style="background-color:white;">
+			<tr> 
+				<td><img id="blah" src="http://placehold.it/150" alt="your image" /></td>
+				<td><input type='file' name="imageToPrint" id="imageToPrint"  onchange="readURL(this);"  style=" background-color:white;" accept='.svg' required/></td>
+			</tr>
+		</table>
+<br>
 	<div  id="specifics" style=" display:block;">
 		<table align="center" style="background-color:white; ">
 			<tr > 
@@ -161,7 +161,7 @@
 			</tr>
 			<tr>
 
-				<td><button type="submit"></button> <button style="display:block;" onclick="submitForm()" >Order Now</button></td>
+				<td><button type="submit" style="display:block;">Order Now</button></td>
 			</tr>
 		</table>
 		<div id="overlay" onclick="off()">
