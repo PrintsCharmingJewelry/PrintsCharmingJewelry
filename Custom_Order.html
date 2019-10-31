@@ -44,13 +44,7 @@
 	</style>
 		<script>
 
-			function onload(){
-				var urlParams = new URLSearchParams(window.location.search);
-				var image = urlParams.get("imageSent");
-				if(image== 'dragon'){
-					document.getElementById("imageToPrint").src = "Feat6.JPG"
-				}
-			}
+			
 
 		     function readURL(input) {
 			
@@ -112,6 +106,13 @@
 		function off() {
   			document.getElementById("overlay").style.display = "none";
 		}
+		function onload(){
+				var urlParams = new URLSearchParams(window.location.search);
+				var image = urlParams.get("imageSent");
+				if(image== 'dragon'){
+					readURL(Feat6.jpg)
+				}
+			}
 		</script>
 	</head>
 	<body>
