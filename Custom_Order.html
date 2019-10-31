@@ -121,9 +121,21 @@
     document.getElementById("blah").innerHTML = l;
    
   }
-		</script>
+
+  var locate = window.location;
+  document.joe.burns.value=locate;
+
+  var text = document.joe.burns.value;
+
+  function delineate(str){
+  		theleft = str.indexOf("=")+1;
+  		theright = str.lastIndexOf("&");
+  		return(str.substring(theleft,theright));
+	}	
+	</script>
 	</head>
 	<body onLoad="processUser()">
+<form name="joe"><input type="hidden" name="burns"></form>
 	<div align="center" style="background-color:black;padding:30px;	">
 	<img  src="BusinessLogo.png" alt="logo" style="float:left; padding-right: 20px;" height=50px  />
 	<span id="home" onMouseOver="hoverChangeColor(1);" onMouseOut="unHoverChangeColor();"  ><a href="index.html">Home</a></span>
