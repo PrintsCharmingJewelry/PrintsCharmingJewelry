@@ -103,27 +103,56 @@
 		function off() {
   			document.getElementById("overlay").style.display = "none";
 		}
-		
+		function getImage(){
+				var urlParams = new URLSearchParams(window.location.search);
+				var image = urlParams.get("imageSent");
+				if(image== "dragon"){
+					document.getElementById("blah").src = Feat6.jpg;
+				}
+			}
+
+			function processUser()
+  {
+    var parameters = location.search.substring(1).split("&");
+
+    var temp = parameters[0].split("=");
+    l = temp[1]
+    document.getElementById("imageToPrint").innerHTML = l;
+    document.getElementById("blah").innerHTML = l;
+   
+  }
+
+  var locate = window.location;
+  document.joe.burns.value=locate;
+
+  var text = document.joe.burns.value;
+
+  function delineate(str){
+  		theleft = str.indexOf("=")+1;
+  		theright = str.lastIndexOf("&");
+  		return(str.substring(theleft,theright));
+	}	
+
+	document.getElementById("blah").src = Feat6.JPG;
 	</script>
 	</head>
-	<body onLoad="processUser()">
-<form name="joe"><input type="hidden" name="burns"></form>
+	<body>
 	<div align="center" style="background-color:black;padding:30px;	">
 	<img  src="BusinessLogo.png" alt="logo" style="float:left; padding-right: 20px;" height=50px  />
 	<span id="home" onMouseOver="hoverChangeColor(1);" onMouseOut="unHoverChangeColor();"  ><a href="index.html">Home</a></span>
 	<span id="store" onMouseOver="hoverChangeColor(2);" onMouseOut="unHoverChangeColor();"><a href="Store.html">Store</a></span>
-	<span id="Custom_Order" onMouseOver="hoverChangeColor(3);" onMouseOut="unHoverChangeColor();" style="background-color: #165400;" >Order Now</span>
+	<span id="Custom_Order" onMouseOver="hoverChangeColor(3);" onMouseOut="unHoverChangeColor();" style="background-color: #165400;" ><a href="Custom_Order.html">Order Now</a></span>
 	<span id="contact" onMouseOver="hoverChangeColor(4);" onMouseOut="unHoverChangeColor();"><a href="contact.html">Contact Us</a></span>
 	</div>
 	<br>
 	<br>
 	<br>
 	<br>
-	<form method="get" id="customOrder" name="customOrder" action="mailto:printscharmingjewelryllc@gmail.com;">
+	<form method="post" id="customOrder" name="customOrder" action="mailto:printscharmingjewelryllc@gmail.com;">
 	<table align="center" style="background-color:white;">
 	<tr> 
-		<td><img id="blah" src="http://placehold.it/150" alt="your image" /></td>
-		<td><input type='file' name="imageToPrint" id="imageToPrint"  onchange="readURL(this);"  style=" background-color:white;" accept='.svg' required/></td>
+		<td><img id="blah" src="Feat6.JPG" alt="your image" />
+		<input type='hidden' name="featuredImageChoice6" value="Feat6.JPG"/></td>
 	</tr>
 	</table>
 	<br>
