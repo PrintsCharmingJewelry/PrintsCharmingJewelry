@@ -13,12 +13,7 @@
 				color:white;	
 			}
 			
-			a{
-				font-size:30px;
-				text-decoration: none;
-				color:white;
-			}
-	
+
 			
 	
 			table,th,td{
@@ -34,10 +29,16 @@ a:visited {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: none;
-}
-
 a:active {
   text-decoration: none;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover 
+{
+     color:white; 
+     text-decoration:none; 
 }
