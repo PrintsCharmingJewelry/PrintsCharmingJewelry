@@ -75,7 +75,7 @@
     }
 
     function submitForm() {
-      document.forms["customOrder"].action = 'mailto:printscharmingjewelryllc@gmail.com;'
+      document.forms["customOrder"].action = 'mailto:printscharmingjewelryllc%40gmail.com?subject=Custom%20Order&body=Amount%3A%0AColor%3A%0AAddress%3A%0ACity%3A%0AState%3A%0AZip%3A';
       document.forms["customOrder"].submit();
       on();
     }
@@ -115,7 +115,7 @@
   <br>
   <br>
 
-  <form method="post" id="customOrder" name="customOrder" action="mailto:printscharmingjewelryllc@gmail.com;">
+  <form method="post" id="customOrder" name="customOrder" >
     <table align="center" style="background-color:white;">
       <tr>
         <td><img id="blah" src="http://placehold.it/150" alt="your image" /></td>
@@ -158,7 +158,7 @@
         </tr>
         <tr>
 
-          <td><button type="submit" style="display:block;" onclick="on()">Order Now</button></td>
+          <td><button type="submit" style="display:block;" onclick="submitForm()">Order Now</button></td>
           <td>
             <h5>IMPORTANT</h5><br>
             <p>Please Attach .svg File to email as well, otherwise order will not be processed.</p>
