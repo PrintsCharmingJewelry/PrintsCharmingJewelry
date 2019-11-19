@@ -60,7 +60,14 @@
     border-collapse: collapse;
   }
 </style>
+<script>
+	function sendImage(){
 
+          var value1="Feat1.png";
+          var queryString = "?para1=" + value1;
+          window.location.href = "Custom_Order.html" + queryString;
+    }
+</script>
 <body>
   <header class="topnav">
     <img src="BusinessLogo.png" alt="logo" style="float:left; padding-right: 20px;" height=50px />
@@ -135,6 +142,9 @@
         <td><a href="Featured6Page.html"><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Feat6.JPG" alt="keychain 6" height=200px width=200px /></a></td>
       </tr>
     </table>
+    
+    
+     <button onclick="sendImage()">Send Image</button>
     <br>
     <br>
     <br>
