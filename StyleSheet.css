@@ -41,6 +41,7 @@ a:hover {
 .topnav {
   background-color: #242423;
   overflow: hidden;
+  position: relative;
 }
 
 /* Style the links inside the navigation bar */
@@ -64,14 +65,11 @@ a:hover {
   background-color: #165400;
   color: white;
 }
-
+ul{
+  position: absolute;
+bottom: 0px;
+left: 100px;
+}
 li {
   list-style-type: none;
 }
- img {
-    display: block;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
