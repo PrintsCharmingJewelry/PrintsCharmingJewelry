@@ -53,35 +53,21 @@
 		function off() {
   			document.getElementById("overlay").style.display = "none";
 		}
-		function hoverChangeColor(x){
-	      if (x==1){
-	        document.getElementById("home").style.background="#165400"
-	      }else if(x==2){
-	        document.getElementById("store").style.background="#165400"
-	      }else if(x==3){
-	        document.getElementById("Custom_Order").style.background="#165400"
-	      }else if(x==4){
-	        document.getElementById("contact").style.background="#165400"
-	      }else{
-	
-	      }
-	    }
-	    function unHoverChangeColor(){
-
-	      document.getElementById("store").style.background="green";
-	      document.getElementById("Custom_Order").style.background="green";
-	      document.getElementById("home").style.background="green";
-	    }	
+		
 		</script>
 	    </head>
 	      <body>
-		  <div align="center" style="padding:30px;	">
-	        <img  src="BusinessLogo.png" alt="logo" style="float:left; padding-right: 20px;"height=50px  />
-	        <span id="home" onMouseOver="hoverChangeColor(1);" onMouseOut="unHoverChangeColor();" ><a href="index.html">Home</a></span>
-	        <span id="store" onMouseOver="hoverChangeColor(2);" onMouseOut="unHoverChangeColor();"><a href="Store.html">Store</a></span>
-	        <span id="Custom_Order" onMouseOver="hoverChangeColor(3);" onMouseOut="unHoverChangeColor();" ><a href="Custom_Order.html">Order Now</a></span>
-	        <span id="contact" onMouseOver="hoverChangeColor(4);" onMouseOut="unHoverChangeColor();" style="background-color: #165400;" >Contact Us</span>
-	        </div>
+		  	<header class="topnav">
+		<img  src="BusinessLogo.png" alt="logo" style="float:left; padding-right: 20px;"height=50px  />
+			<nav>
+				<UL>
+						<a class = "active" href=""><li>Home</li></a>
+                		<a href="Store.html"><li>Store</li></a>
+                		<a href="Custom_Order.html"><li>Custom Orders</li></a>
+                		<a href="contact.html"><li>Contact</li></a>
+				</UL>
+			</nav>
+	</header>
 			<br>
 	        <br>
 	        <br>
