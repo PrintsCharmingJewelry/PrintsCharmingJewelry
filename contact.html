@@ -1,98 +1,119 @@
 <!DOCTYPE html>
 <html>
 <style>
-	td 4{
-  	padding:50px;
-	
+  td 4 {
+    padding: 50px;
 
-	}
-	
-	table,th,td{
-	
-	border: 1px solid black;
-	background-color: white;
-	}
-	#text{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 50px;
-  color: white;
-  transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-}
-#overlay {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
-}
+
+  }
+
+  table,
+  th,
+  td {
+
+    border: 1px solid black;
+    background-color: white;
+  }
+
+  #text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+  #overlay {
+    position: fixed;
+    /* Sit on top of the page content */
+    display: none;
+    /* Hidden by default */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black background with opacity */
+    z-index: 2;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */
+  }
 </style>
-	<head>
-		<title>Prints Charming</title>
-		<link rel="icon" type="image/ico" href="BusinessLogo.png" />
-	  <link href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/paper/bootstrap.min.css' rel='stylesheet'>
-	  <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link href="StyleSheet.css" rel="stylesheet" type="text/css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-	
-		<script>
-		function on() {
-	  		document.getElementById("overlay").style.display = "block";
-		}
 
-		function off() {
-  			document.getElementById("overlay").style.display = "none";
-		}
-		
-		</script>
-	    </head>
-	      <body>
-		  	<header class="topnav">
-		<img  src="BusinessLogo.png" alt="logo" style="float:left; padding-right: 20px;"height=50px  />
-			<nav>
-				<UL>
-						<a  href="index.html"><li>Home</li></a>
-                		<a href="Store.html"><li>Store</li></a>
-                		<a href="Custom_Order.html"><li>Custom Orders</li></a>
-                		<a class = "active"href=""><li>Contact</li></a>
-				</UL>
-			</nav>
-	</header>
-			<br>
-	        <br>
-	        <br>
-	        <br>
-			<div align="center" style="background-color: #CCCCCC;">
-			<form method="post" action="mailto:printscharmingjewelryllc@gmail.com;">
-				<table style="border:1px solid black">
-					<tr>
-						<td style="padding-left:10px; border:1px solid black">Full Name: <input type="text" name="first_name" rows="1" cols="100" required></td>
-					
-					</tr>
-					<tr>
-						<td style="padding-left:10px; border:1px solid black">Email: <input type="text" name="email_address" rows="1" cols="100"> </td>
-					</tr>
-					<tr>
-						<td style="padding-left:10px; border:1px solid black">Message: <textarea style="display:block;" name="comments" rows="10" cols="100"></textarea> </td>
-					</tr>
-					<tr>
-						<td align="center" ><button style="display:block;" type="submit" value="Submit" onclick="on()">Send Email</button></td>
-					</tr>
-				</table>
-				<div id="overlay" onclick="off()">
-  					<div id="text">We have recived your request to email us, please click send on your mail program to send us your message</div>
-				</div>
-			</form>
-		</div>
-	</body>
+<head>
+  <title>Prints Charming</title>
+  <link rel="icon" type="image/ico" href="BusinessLogo.png" />
+  <link href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/paper/bootstrap.min.css' rel='stylesheet'>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="StyleSheet.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script>
+    function on() {
+      document.getElementById("overlay").style.display = "block";
+    }
+
+    function off() {
+      document.getElementById("overlay").style.display = "none";
+    }
+  </script>
+</head>
+
+<body>
+  <header class="topnav">
+    <img src="BusinessLogo.png" alt="logo" style="float:left; padding-right: 20px;" height=50px />
+    <nav>
+      <UL>
+        <a href="index.html">
+          <li>Home</li>
+        </a>
+        <a href="Store.html">
+          <li>Store</li>
+        </a>
+        <a href="Custom_Order.html">
+          <li>Custom Orders</li>
+        </a>
+        <a class="active" href="">
+          <li>Contact</li>
+        </a>
+      </UL>
+    </nav>
+  </header>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div align="center" style="background-color: #CCCCCC;">
+    <form method="post" action="mailto:printscharmingjewelryllc@gmail.com;">
+      <table style="border:1px solid black">
+        <tr>
+          <td style="padding-left:10px; border:1px solid black">Full Name: <input type="text" name="first_name" rows="1" cols="100" required></td>
+
+        </tr>
+        <tr>
+          <td style="padding-left:10px; border:1px solid black">Email: <input type="text" name="email_address" rows="1" cols="100"> </td>
+        </tr>
+        <tr>
+          <td style="padding-left:10px; border:1px solid black">Message: <textarea style="display:block;" name="comments" rows="10" cols="100"></textarea> </td>
+        </tr>
+        <tr>
+          <td align="center"><button style="display:block;" type="submit" value="Submit" onclick="on()">Send Email</button></td>
+        </tr>
+      </table>
+      <div id="overlay" onclick="off()">
+        <div id="text">We have recived your request to email us, please click send on your mail program to send us your message</div>
+      </div>
+    </form>
+  </div>
+</body>
+
 </html>

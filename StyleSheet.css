@@ -1,26 +1,23 @@
-			div{
-				background-color:#242423;
-			}
-			body{
-				
-				background: #CCCCCC;
-			}
-			span{
+div {
+  background-color: #242423;
+}
+body {
+  background: #cccccc;
+}
+span {
+  font-size: 30px;
+  background: green;
+  padding: 10px;
+  color: white;
+}
 
-				font-size:30px;
-				background: green;
-				padding:10px;	
-				color:white;	
-			}
-			
+table,
+th,
+td {
+  background-color: white;
 
-			
-	
-			table,th,td{
-			background-color:white;
-
-			border:1px solid black;
-			}
+  border: 1px solid black;
+}
 a:link {
   text-decoration: none;
 }
@@ -33,14 +30,13 @@ a:active {
   text-decoration: none;
 }
 a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
-a:hover 
-{
-     color:white; 
-     text-decoration:none; 
+a:hover {
+  color: white;
+  text-decoration: none;
 }
 .topnav {
   background-color: #333;
@@ -65,10 +61,10 @@ a:hover
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
 }
 
-li{
-	list-style-type: none;
+li {
+  list-style-type: none;
 }

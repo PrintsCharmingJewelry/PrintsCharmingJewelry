@@ -1,162 +1,178 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		
-		<title>Prints Charming</title>
-		<link rel="icon" type="image/ico" href="BusinessLogo.png" />
-	  <link href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/paper/bootstrap.min.css' rel='stylesheet'>
-	  <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link href="StyleSheet.css" rel="stylesheet" type="text/css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-	<style> img{
-			max-width:180px;
-			}
-			input[type=file]{
-			padding:10px;
-			background:navy;}
-			td {
-				padding:50px;
-			}
-			#text{
- 			 position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 50px;
-  color: white;
-  transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-}
-#overlay {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
-}
 
-	</style>
-		<script>
+<head>
 
-		     function readURL(input) {
-			
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
+  <title>Prints Charming</title>
+  <link rel="icon" type="image/ico" href="BusinessLogo.png" />
+  <link href='https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/paper/bootstrap.min.css' rel='stylesheet'>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="StyleSheet.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    img {
+      max-width: 180px;
+    }
 
-                reader.onload = function (e) {
-                    $('#blah')
-                        .attr('src', e.target.result);
-							
-                };
+    input[type=file] {
+      padding: 10px;
+      background: navy;
+    }
 
-                reader.readAsDataURL(input.files[0]);
-				
-            }
-        }
-			
-			
-			function myFunction(input) {
-				var x = document.getElementById(input);
- 
-				x.style.display = "block";
-			}
-        
+    td {
+      padding: 50px;
+    }
 
-	function submitForm(){
-		document.forms["customOrder"].action='mailto:printscharmingjewelryllc@gmail.com;'
-		document.forms["customOrder"].submit();
-		on();
-	}
-	function on() {
-	  		document.getElementById("overlay").style.display = "block";
-		}
+    #text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 50px;
+      color: white;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
 
-		function off() {
-  			document.getElementById("overlay").style.display = "none";
-		}
-		
-	</script>
-	</head>
-	<body>
-	<header class="topnav">
-		<img  src="BusinessLogo.png" alt="logo" style="float:left; padding-right: 20px;"height=50px  />
-			<nav>
-				<UL>
-						<a href="index.html"><li>Home</li></a>
-                		<a href="Store.html"><li>Store</li></a>
-                		<a class = "active"  href=""><li>Custom Orders</li></a>
-                		<a href="contact.html"><li>Contact</li></a>
-				</UL>
-			</nav>
-	</header>
-	<br>
-	<br>
-	<br>
-	<br>
-	
+    #overlay {
+      position: fixed;
+      /* Sit on top of the page content */
+      display: none;
+      /* Hidden by default */
+      width: 100%;
+      /* Full width (cover the whole page) */
+      height: 100%;
+      /* Full height (cover the whole page) */
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Black background with opacity */
+      z-index: 2;
+      /* Specify a stack order in case you're using a different order for other elements */
+      cursor: pointer;
+      /* Add a pointer on hover */
+    }
+  </style>
+  <script>
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          $('#blah')
+            .attr('src', e.target.result);
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
 
-	<form method="post" id="customOrder" name="customOrder" action="mailto:printscharmingjewelryllc@gmail.com;">
-		<table align="center" style="background-color:white;">
-			<tr> 
-				<td><img id="blah" src="http://placehold.it/150" alt="your image" /></td>
-				<td><input type='file' name="imageToPrint" id="imageToPrint"  onchange="readURL(this);"  style=" background-color:white;" accept='.svg' required/> <h5>Important</h5><p>Please make sure your image is a .svg file</td>
-			</tr>
-		</table>
-<br>
-	<div  id="specifics" style=" background-color: #CCCCCC;display:block;">
-		<table align="center" style="background-color:white; ">
-			<tr > 
-				<td><label for="amount" >How many would you like printed?</label>
-					<input type="number" name="amount" id="amount" min="5" max="200" required></td>
-				<td><label for="color">What color would you like these printed in?</label>
-					<select name="color" id="color" style="padding:10px" required>
+    function myFunction(input) {
+      var x = document.getElementById(input);
+      x.style.display = "block";
+    }
+
+    function submitForm() {
+      document.forms["customOrder"].action = 'mailto:printscharmingjewelryllc@gmail.com;'
+      document.forms["customOrder"].submit();
+      on();
+    }
+
+    function on() {
+      document.getElementById("overlay").style.display = "block";
+    }
+
+    function off() {
+      document.getElementById("overlay").style.display = "none";
+    }
+  </script>
+</head>
+
+<body>
+  <header class="topnav">
+    <img src="BusinessLogo.png" alt="logo" style="float:left; padding-right: 20px;" height=50px />
+    <nav>
+      <UL>
+        <a href="index.html">
+          <li>Home</li>
+        </a>
+        <a href="Store.html">
+          <li>Store</li>
+        </a>
+        <a class="active" href="">
+          <li>Custom Orders</li>
+        </a>
+        <a href="contact.html">
+          <li>Contact</li>
+        </a>
+      </UL>
+    </nav>
+  </header>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <form method="post" id="customOrder" name="customOrder" action="mailto:printscharmingjewelryllc@gmail.com;">
+    <table align="center" style="background-color:white;">
+      <tr>
+        <td><img id="blah" src="http://placehold.it/150" alt="your image" /></td>
+        <td><input type='file' name="imageToPrint" id="imageToPrint" onchange="readURL(this);" style=" background-color:white;" accept='.svg' required/>
+          <h5>Important</h5>
+          <p>Please make sure your image is a .svg file</td>
+      </tr>
+    </table>
+    <br>
+    <div id="specifics" style=" background-color: #CCCCCC;display:block;">
+      <table align="center" style="background-color:white; ">
+        <tr>
+          <td><label for="amount">How many would you like printed?</label>
+            <input type="number" name="amount" id="amount" min="5" max="200" required></td>
+          <td><label for="color">What color would you like these printed in?</label>
+            <select name="color" id="color" style="padding:10px" required>
 						<option value="ChooseOne" >Choose One</option>
 						<option value="grey">Brown</option>
 						<option value="blue">Blue</option>
 						<option value="black">Black</option>
 					</select>
-				</td>
-			</tr>
+          </td>
+        </tr>
 
-			<tr>
-				<td><label for="Homeaddress">Home Shipping Address:</label></td>
-				<td><input name= "Homeaddress" id="Homeaddress" type="text" required></td>
-			</tr>
-			<tr>
-				<td><label for="City">City:</label></td>
-				<td><input name= "City" id="City" type="text" required></td>
-			</tr>
-			<tr>
-				<td><label for="State">State:</label></td>
-				<td><input name= "State" id="State" type="text" required></td>
-			</tr>
-			<tr>
-				<td><label for="Zipcode">Zipcode:</label></td>
-				<td><input name= "Zipcode" id="Zipcode" type="text" required></td>
-			</tr>
-			<tr>
+        <tr>
+          <td><label for="Homeaddress">Home Shipping Address:</label></td>
+          <td><input name="Homeaddress" id="Homeaddress" type="text" required></td>
+        </tr>
+        <tr>
+          <td><label for="City">City:</label></td>
+          <td><input name="City" id="City" type="text" required></td>
+        </tr>
+        <tr>
+          <td><label for="State">State:</label></td>
+          <td><input name="State" id="State" type="text" required></td>
+        </tr>
+        <tr>
+          <td><label for="Zipcode">Zipcode:</label></td>
+          <td><input name="Zipcode" id="Zipcode" type="text" required></td>
+        </tr>
+        <tr>
 
-				<td><button type="submit" style="display:block;" onclick="on()">Order Now</button></td>
-				<td><h5>IMPORTANT</h5><br>
-					<p>Please Attach .svg File to email as well, otherwise order will not be processed.</p>
-				</td>
-			</tr>
-		</table>
-		<div id="overlay" onclick="off()">
-  					<div id="text">We are opening your default email provider, please click send for your order to be placed. We will get back to you in 2-4 business days</div>
-				</div>
-	</div>
-</form>
-	<br>
-	<br>
-	<br>
-	<br>
-	</body>
+          <td><button type="submit" style="display:block;" onclick="on()">Order Now</button></td>
+          <td>
+            <h5>IMPORTANT</h5><br>
+            <p>Please Attach .svg File to email as well, otherwise order will not be processed.</p>
+          </td>
+        </tr>
+      </table>
+      <div id="overlay" onclick="off()">
+        <div id="text">We are opening your default email provider, please click send for your order to be placed. We will get back to you in 2-4 business days</div>
+      </div>
+    </div>
+  </form>
+  <br>
+  <br>
+  <br>
+  <br>
+</body>
+
 </html>
