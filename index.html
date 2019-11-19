@@ -61,9 +61,9 @@
   }
 </style>
 <script>
-	function sendImage(){
+	function sendImage(IMG){
 
-          var value1="Feat1.JPG";
+          var value1= IMG;
           var queryString = "?para1=" + value1;
           window.location.href = "Premade_Order.html" + queryString;
     }
@@ -132,14 +132,14 @@
     <table style=" align: center; background-color:white; ">
       <tr>
 
-        <td><a href="Featured1Page.html"><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Feat1.JPG" alt="keychain 1" height=200px width=200px /></a></td>
-        <td><a href="Featured2Page.html"><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Feat2.JPG" alt="keychain 2" height=200px width=200px /></a></td>
-        <td><a href="Featured3Page.html"><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Feat3.JPG" alt="keychain 3" height=200px width=200px /></a></td>
+        <td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Feat1.JPG" alt="keychain 1" height=200px width=200px onclick="sendImage('Feat1.JPG')" /></td>
+        <td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Feat2.JPG" alt="keychain 2" height=200px width=200px onclick="sendImage('Feat2.JPG')"/></td>
+        <td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Feat3.JPG" alt="keychain 3" height=200px width=200px onclick="sendImage('Feat3.JPG')"/></td>
       </tr>
       <tr>
-        <td><a href="Featured4Page.html"><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Feat4.JPG" alt="keychain 4" height=200px width=200px /></a></td>
-        <td><a href="Featured5Page.html"><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Feat5.JPG" alt="keychain 5" height=200px width=200px /></a></td>
-        <td><a href="Featured6Page.html"><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Feat6.JPG" alt="keychain 6" height=200px width=200px /></a></td>
+        <td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Feat4.JPG" alt="keychain 4" height=200px width=200px onclick="sendImage('Feat4.JPG')"/></td>
+        <td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Feat5.JPG" alt="keychain 5" height=200px width=200px onclick="sendImage('Feat5.JPG')"/></td>
+        <td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Feat6.JPG" alt="keychain 6" height=200px width=200px onclick="sendImage('Feat6.JPG')"/></td>
       </tr>
     </table>
     
