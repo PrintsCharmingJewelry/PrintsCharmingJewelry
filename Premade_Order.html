@@ -103,6 +103,7 @@
     <table align="center" style="background-color:white;">
       <tr>
         <td><img id="blah" src="http://placehold.it/150" alt="your image" /></td>
+       <td> <input id="image" type='hidden' name="imageChoice" value="none"/></td>
     </table>
     <br>
     <div id="specifics" style=" background-color: #CCCCCC;display:block;">
@@ -160,5 +161,6 @@ var queries = queryString.split("&");
    var queries = queryString.split("=");
     
 document.getElementById("blah").src = queries[1];
+document.getElementById("imgae").value = queries[1];
 </script> 
 </html>
