@@ -73,8 +73,8 @@
          var input = document.getElementById('comments');
         message = input.value;
         
-      document.forms["customOrder"].action = 'mailto:printscharmingjewelryllc%40gmail.com?subject=Contact%20Us&body=Name%3A%20'+name+'%0AEmail%3A%20'+email+'%0AMessage%3A%0A'+message;
-      document.forms["customOrder"].submit();
+      document.forms["contactUsForm"].action = 'mailto:printscharmingjewelryllc%40gmail.com?subject=Contact%20Us&body=Name%3A%20'+name+'%0AEmail%3A%20'+email+'%0AMessage%3A%0A'+message;
+      document.forms["contactUsForm"].submit();
       on();
     }
   </script>
@@ -104,7 +104,7 @@
  <br>
   <div align="center" style="background-color: #CCCCCC;">
     
-    <form method="post" action="submitForm()">
+    <form id="contactUsForm" method="post" action="submitForm()">
       <table style="border:1px solid black">
         <tr>
           <td style="padding-left:10px; border:1px solid black">Full Name: <input type="text" name="first_name" rows="1" cols="100" required></td>
