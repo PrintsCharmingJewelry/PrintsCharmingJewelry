@@ -71,6 +71,26 @@
     function off() {
       document.getElementById("overlay").style.display = "none";
     }
+        function submitForm() {
+       var input = document.getElementById('image');
+        image = input.value;
+       var input = document.getElementById('amount');
+        amount = input.value;
+         var input = document.getElementById('color');
+        color = input.value;
+         var input = document.getElementById('Homeaddress');
+        Homeaddress = input.value;
+         var input = document.getElementById('City');
+        City = input.value;
+         var input = document.getElementById('State');
+        State = input.value;
+         var input = document.getElementById('Zipcode');
+        Zipcode = input.value;
+      document.forms["customOrder"].action = 'mailto:printscharmingjewelryllc%40gmail.com?subject=Custom%20Order&body=Image%3A'+image+'%0Amount%3A'+amount+'%0AColor%3A+'+color+'%0AAddress%3A'+Homeaddress+'%0ACity%3A+'+City+'%0AState%3A'+State+'%0AZip%3A'+Zipcode;
+      document.forms["customOrder"].submit();
+      on();
+    }
+
   </script>
 </head>
 

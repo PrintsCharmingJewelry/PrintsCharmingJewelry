@@ -65,6 +65,18 @@
     function off() {
       document.getElementById("overlay").style.display = "none";
     }
+    function submitForm() {
+    	 var input = document.getElementById('first_name');
+        name = input.value;
+         var input = document.getElementById('email_address');
+        email = input.value;
+         var input = document.getElementById('comments');
+        message = input.value;
+        
+      document.forms["customOrder"].action = 'mailto:printscharmingjewelryllc%40gmail.com?subject=Contact%20Us&body=Name%3A%20'+name+'%0AEmail%3A%20'+email+'%0AMessage%3A%0A'+message;
+      document.forms["customOrder"].submit();
+      on();
+    }
   </script>
 </head>
 
@@ -89,10 +101,9 @@
     </nav>
   </header>
  
-  <script type="text/javascript" src="https://form.jotform.com/jsform/93235265600149"></script>
- <!--
+
   <div align="center" style="background-color: #CCCCCC;">
-    <form method="post" action="mailto:printscharmingjewelryllc@gmail.com;">
+    <form method="post" action="submitForm">
       <table style="border:1px solid black">
         <tr>
           <td style="padding-left:10px; border:1px solid black">Full Name: <input type="text" name="first_name" rows="1" cols="100" required></td>
@@ -113,7 +124,7 @@
       </div>
     </form>
   </div>
--->
+
 </body>
 
 </html>
