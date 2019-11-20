@@ -73,7 +73,7 @@
          var input = document.getElementById('comments');
         message = input.value;
         
-      document.forms["contactUsForm"].action = 'mailto:printscharmingjewelryllc%40gmail.com?subject=Contact%20Us&body=Name%3A%20'+name+'%0AEmail%3A%20'+email+'%0AMessage%3A%0A' +message='';
+      document.forms["contactUsForm"].action = 'mailto:printscharmingjewelryllc%40gmail.com?subject=Contact%20Us&body=Name%3A%20'+name+'%0AEmail%3A%20'+email+'%0AMessage%3A%0A' +message+'';
       document.forms["contactUsForm"].submit();
       on();
     }
@@ -107,14 +107,14 @@
     <form id="contactUsForm" name="contactUsForm" method="post" >
       <table style="border:1px solid black">
         <tr>
-          <td style="padding-left:10px; border:1px solid black">Full Name: <input type="text" name="first_name" rows="1" cols="100" required></td>
+          <td style="padding-left:10px; border:1px solid black">Full Name: <input type="text" id="first_name" name="first_name" rows="1" cols="100" required></td>
 
         </tr>
         <tr>
-          <td style="padding-left:10px; border:1px solid black">Email: <input type="text" name="email_address" rows="1" cols="100"> </td>
+          <td style="padding-left:10px; border:1px solid black">Email: <input type="text" id="email_address" name="email_address" rows="1" cols="100"> </td>
         </tr>
         <tr>
-          <td style="padding-left:10px; border:1px solid black">Message: <textarea style="display:block;" name="comments" rows="10" cols="100"></textarea> </td>
+          <td style="padding-left:10px; border:1px solid black">Message: <textarea style="display:block;" id="comments" name="comments" rows="10" cols="100"></textarea> </td>
         </tr>
         <tr>
           <td align="center"><button style="display:block;" type="submit" value="Submit" onclick="submitForm()">Send Email</button></td>
