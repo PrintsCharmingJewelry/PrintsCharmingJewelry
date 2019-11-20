@@ -73,7 +73,7 @@
          var input = document.getElementById('comments');
         message = input.value;
         
-      document.forms["contactUsForm"].action = 'mailto:printscharmingjewelryllc%40gmail.com?subject=Contact%20Us&body=Name%3A%20'+name+'%0AEmail%3A%20'+email+'%0AMessage%3A%0A'+message;
+      document.forms["contactUsForm"].action = 'mailto:printscharmingjewelryllc%40gmail.com?subject=Contact%20Us&body=Name%3A%20'+name+'%0AEmail%3A%20'+email+'%0AMessage%3A%0A' +message='';
       document.forms["contactUsForm"].submit();
       on();
     }
