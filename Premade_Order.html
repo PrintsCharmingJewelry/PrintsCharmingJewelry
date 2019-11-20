@@ -58,11 +58,7 @@
   </style>
   <script>
 
-    function submitForm() {
-      document.forms["customOrder"].action = 'mailto:printscharmingjewelryllc@gmail.com;'
-      document.forms["customOrder"].submit();
-      on();
-    }
+
 
     function on() {
       document.getElementById("overlay").style.display = "block";
@@ -119,7 +115,7 @@
   <br>
   <br>
 
-  <form method="post" id="customOrder" name="customOrder" action="submitForm()">
+  <form method="post" id="customOrder" name="customOrder" ">
     <table align="center" style="background-color:white;">
       <tr>
         <td><img id="blah" src="http://placehold.it/150" alt="your image" />
@@ -159,7 +155,7 @@
         </tr>
         <tr>
 
-          <td><button type="submit" style="display:block;" onclick="on()">Order Now</button></td>
+          <td><button type="submit" style="display:block;" onclick="submitForm()">Order Now</button></td>
         
         </tr>
       </table>
