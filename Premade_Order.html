@@ -16,13 +16,32 @@
       max-width: 180px;
     }
 
-    input[type=file] {
-      padding: 10px;
-      background: navy;
+    td {
+      padding-left: 20px;
+      padding-bottom: 20px;
+      padding-top:10px;
+       padding-right: 20px;
     }
 
+    input[type=text],input[type=number],
+    input,
+    select {
+      background-color: #cccccc;
+
+      padding: 1px;
+border-radius: 5px;
+    }
+
+    table,
+    th,
     td {
-      padding: 50px;
+
+      border: 0;
+      background-color: white;
+    }
+
+    table {
+      border-collapse: collapse;
     }
 
     #text {
@@ -34,7 +53,9 @@
       transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
     }
-
+    label{
+      
+    }
     #overlay {
       position: fixed;
       /* Sit on top of the page content */
@@ -57,9 +78,6 @@
     }
   </style>
   <script>
-
-
-
     function on() {
       document.getElementById("overlay").style.display = "block";
     }
@@ -67,26 +85,26 @@
     function off() {
       document.getElementById("overlay").style.display = "none";
     }
-        function submitForm() {
-       var input = document.getElementById('image');
-        image = input.value;
-       var input = document.getElementById('amount');
-        amount = input.value;
-         var input = document.getElementById('color');
-        color = input.value;
-         var input = document.getElementById('Homeaddress');
-        Homeaddress = input.value;
-         var input = document.getElementById('City');
-        City = input.value;
-         var input = document.getElementById('State');
-        State = input.value;
-         var input = document.getElementById('Zipcode');
-        Zipcode = input.value;
-      document.forms["customOrder"].action = 'mailto:printscharmingjewelryllc%40gmail.com?subject=Custom%20Order&body=Image%3A'+image+'%0Amount%3A'+amount+'%0AColor%3A+'+color+'%0AAddress%3A'+Homeaddress+'%0ACity%3A+'+City+'%0AState%3A'+State+'%0AZip%3A'+Zipcode;
+
+    function submitForm() {
+      var input = document.getElementById('image');
+      image = input.value;
+      var input = document.getElementById('amount');
+      amount = input.value;
+      var input = document.getElementById('color');
+      color = input.value;
+      var input = document.getElementById('Homeaddress');
+      Homeaddress = input.value;
+      var input = document.getElementById('City');
+      City = input.value;
+      var input = document.getElementById('State');
+      State = input.value;
+      var input = document.getElementById('Zipcode');
+      Zipcode = input.value;
+      document.forms["customOrder"].action = 'mailto:printscharmingjewelryllc%40gmail.com?subject=Custom%20Order&body=Image%3A' + image + '%0Amount%3A' + amount + '%0AColor%3A+' + color + '%0AAddress%3A' + Homeaddress + '%0ACity%3A+' + City + '%0AState%3A' + State + '%0AZip%3A' + Zipcode;
       document.forms["customOrder"].submit();
       on();
     }
-
   </script>
 </head>
 
@@ -119,44 +137,50 @@
     <table align="center" style="background-color:white;">
       <tr>
         <td><img id="blah" src="http://placehold.it/150" alt="your image" />
-       <input id="image" type='hidden' name="imageChoice" value="none"/></td>
+          <input id="image" type='hidden' name="imageChoice" value="none" /></td>
     </table>
     <br>
     <div id="specifics" style=" background-color: #CCCCCC;display:block;">
       <table align="center" style="background-color:white; ">
         <tr>
-          <td><label for="amount">How many would you like printed?</label>
+          <td><label style="font-size: 15px;
+      font-weight: bold;" for="amount">How many would you like printed?</label>
             <input type="number" name="amount" id="amount" min="5" max="200" required></td>
-          <td><label for="color">What color would you like these printed in?</label>
+        </tr>
+        <tr> <td><label style="font-size: 15px;
+      font-weight: bold;" for="color">What color would you like these printed in?</label>
             <select name="color" id="color" style="padding:10px" required>
-						<option value="ChooseOne" >Choose One</option>
-						<option value="grey">Brown</option>
-						<option value="blue">Blue</option>
-						<option value="black">Black</option>
-					</select>
-          </td>
+            <option value="ChooseOne" >Choose One</option>
+            <option value="grey">Brown</option>
+            <option value="blue">Blue</option>
+            <option value="black">Black</option>
+          </select>
+          </td></tr>
+        <tr>
+          <td><p style="font-weight: bold;font-size:15px;">Shipping Address:</p>
+          
+             <label  for="Homeaddress">Street Address Line 1:</label>
+            <input  name="Homeaddress" id="Homeaddress" type="text" required>
+           
+            
+             <br>
+            
+            <label for="Homeaddress2">Street Address Line 2:</label>
+            <input name="Homeaddress2" id="Homeaddress2" type="text">
+            
+            <br>
+            <label for="City">City:</label>
+            <input name="City" id="City" type="text" required>
+            
+            <label for="State">State/Province:</label>
+            <input name="State" id="State" type="text" required>
+            <br>
+            <label for="Zipcode">Postal/Zipcode:</label>
+            <input name="Zipcode" id="Zipcode" type="text" required></td>
         </tr>
+        <tr>
+          <td style="padding-left:20px;"><button type="submit" style="display:block;" onclick="submitForm()">Order Now</button></td>
 
-        <tr>
-          <td><label for="Homeaddress">Home Shipping Address:</label></td>
-          <td><input name="Homeaddress" id="Homeaddress" type="text" required></td>
-        </tr>
-        <tr>
-          <td><label for="City">City:</label></td>
-          <td><input name="City" id="City" type="text" required></td>
-        </tr>
-        <tr>
-          <td><label for="State">State:</label></td>
-          <td><input name="State" id="State" type="text" required></td>
-        </tr>
-        <tr>
-          <td><label for="Zipcode">Zipcode:</label></td>
-          <td><input name="Zipcode" id="Zipcode" type="text" required></td>
-        </tr>
-        <tr>
-
-          <td><button type="submit" style="display:block;" onclick="submitForm()">Order Now</button></td>
-        
         </tr>
       </table>
       <div id="overlay" onclick="off()">
@@ -169,14 +193,13 @@
   <br>
   <br>
 </body>
-  <script>
+<script>
+  var queryString = decodeURIComponent(window.location.search);
+  queryString = queryString.substring(1);
+  var queries = queryString.split("&");
+  var queries = queryString.split("=");
+  document.getElementById("blah").src = queries[1];
+  document.getElementById("image").value = queries[1];
+</script>
 
-var queryString = decodeURIComponent(window.location.search);
-queryString = queryString.substring(1);
-var queries = queryString.split("&");
-   var queries = queryString.split("=");
-    
-document.getElementById("blah").src = queries[1];
-document.getElementById("image").value = queries[1];
-</script> 
 </html>
