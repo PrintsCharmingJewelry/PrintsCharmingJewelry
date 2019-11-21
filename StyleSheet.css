@@ -16,7 +16,7 @@ th,
 td {
   background-color: white;
 
-  border: 1px solid black;
+  border: 0;
 }
 a:link {
   text-decoration: none;
