@@ -153,13 +153,13 @@ border-radius: 5px;
         <tr> <td><label style="font-size: 15px;
       font-weight: bold;" for="color">What color would you like these printed in?</label>
             <select name="color" id="color" style="padding-right:15px" required>
-             <option value="Random">Random</option>
+            <option value="Random">Random</option>
             <option value="Blue">Blue</option>
             <option value="Orange">Orange</option>
             <option value="Silver">Silver</option>
             <option value="DarkBlue">Dark Blue</option>
-              <option value="Brown">Brown</option>
-              <option value="Green">Green</option>
+            <option value="Brown">Brown</option>
+            <option value="Green">Green</option>
              
           </select>
           </td></tr>
@@ -207,6 +207,9 @@ border-radius: 5px;
   var queries = queryString.split("=");
   document.getElementById("blah").src = queries[1];
   document.getElementById("image").value = queries[1];
+  if(queries[1]== 'VideoGamePack.jpg'){
+    document.getElementById("amount").min =1;
+  }
 </script>
 
 </html>
