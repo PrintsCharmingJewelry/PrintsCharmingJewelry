@@ -11,6 +11,7 @@
   <link href="StyleSheet.css" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
   <style>
   h1 {
   	font-family: 'enchanted_landregular';
@@ -97,22 +98,52 @@
   	 <div align="center" style="background-color: #CCCCCC;">
     <h1 style="color:white;  padding:5px">The Store</h1>
   </div>
-    <table style=" text-align: center; background-color:white; ">
-      <tr>
-
-        <td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="3D_Cube.JPG" alt="keychain 1" height=200px width=200px onclick="sendImage('3D_Cube.JPG')" /><p>Prints Charming</p><h6>3D Cube</h6><p>$4.99</p></td>
-        <td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Halo3.JPG" alt="keychain 2" height=200px width=200px onclick="sendImage('Halo3.JPG')"/><p>Prints Charming</p><h6>Halo 3 Logo</h6><p>$4.99</p></td>
-        <td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Heart.JPG" alt="keychain 3" height=200px width=200px onclick="sendImage('Heart.JPG')"/><p>Prints Charming</p><h6>Heart</h6><p>$4.99</p></td>
-        <td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Terraria_Tree.JPG" alt="keychain 4" height=200px width=200px onclick="sendImage('Terraria_Tree.JPG')"/><p>Prints Charming</p><h6>Terraria Tree</h6><p>$4.99</p></td>
-      </tr>
-      <tr>
-        
-        <td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="LongMan.JPG" alt="keychain 5" height=200px width=200px onclick="sendImage('LongMan.JPG')"/><p>Prints Charming</p><h6>Long Man</h6><p>$4.99 </p></td>
-        <td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Skyrim_Logo.JPG" alt="keychain 6" height=200px width=200px onclick="sendImage('Skyrim_Logo.JPG')"/><p>Prints Charming</p><h6>Skyrim Logo</h6><p>$4.99</p></td>
-        <td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="VideoGamePack.jpg" alt="keychain 7" height=200px width=200px onclick="sendImage('VideoGamePack.jpg')"/><p>Prints Charming</p><h6>Video Game Mystery Pack</h6><p>$9.99 </p></td>
-        
-      </tr>
+   
+    <table id="dataContent" style=" text-align: center; background-color:white; ">
+     
     </table>
+    <script>
+      /* Coded by Eren SOYLU @ 2016 
+This frontend aims getting data from Google Spreadsheets with .getJSON method and uses that data in jQuery DataTables
+*/
+$(document).ready(function() {
+     // var tableArray = [];
+      /* First parameter in .getJSON method is published google spreadsheet's modified link for getting data formed with JSON. Tricky key is putting key between link template over here : https://spreadsheets.google.com/feeds/list/PUT-KEY_HERE/od6/public/values?alt=json  | You might be get key when you published your data spreadsheet. The key inside the URL. After getting JSON object you can investigate which key represent data. In this example json.feed.entry is an array that includes my data. Your solution should look similar like that.
+      */
+      
+          var c = 0;
+          var r = 0;
+          var table = document.getElementById("dataContent");
+          var row = table.insertRow(r);
+      $.getJSON('https://spreadsheets.google.com/feeds/list/1KOP9INReCIUW_WM0-3UEy906wYD7tC1C_CjKGEyVBto/od6/public/values?alt=json', function(json) {
+        
+        for (var i = 0; i < json.feed.entry.length; i++) {
+          
+          //var iArray = [];
+         // iArray.push('<img src="' + json.feed.entry[i].gsx$url.$t + '">');
+          //iArray.push("<h6>" + json.feed.entry[i].gsx$name.$t + "</h6>");
+          //tableArray.push(iArray);
+          if(i % 4 === 0){
+          c = 0;
+          r++;
+          row = table.insertRow(r);
+         }
+          if(i === 0){
+         // $("#dataContent").append("<tbody><tr>");
+         }
+          var cell = row.insertCell(c);
+          cell.innerHTML = '<img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" onclick="sendImage(\''+json.feed.entry[i].gsx$url.$t+'\')"src="' + json.feed.entry[i].gsx$url.$t + '" height=200px width=200px><p>Prints Charming</p><h6>' + json.feed.entry[i].gsx$name.$t + '</h6><p>'+ json.feed.entry[i].gsx$price.$t+'</p>';
+         c = c + 1;
+          // $("#dataContent").append('<td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="' + json.feed.entry[i].gsx$url.$t + '" height=200px width=200px><p>Prints Charming</p><h6>' + json.feed.entry[i].gsx$name.$t + '</h6><p>$---</p></td>');
+         
+      
+        }
+       // $("#dataContent").append("</tr></tbody>");
+        
+      });
+    
+});</script>
+
 </body>
 
 </html>
