@@ -154,15 +154,8 @@ border-radius: 5px;
         <tr> <td><label style="font-size: 15px;
       font-weight: bold;" for="color">What color would you like these printed in?</label>
             <select name="color" id="color" style="padding-right:15px" required>
-            <option value="Random">Random</option>
-            <option value="Blue">Blue</option>
-            <option value="Black">Black</option>
-            <option value="Orange">Orange</option>
-            <option value="Silver">Silver</option>
-            <option value="DarkBlue">Dark Blue</option>
-            <option value="Brown">Brown</option>
-            <option value="Green">Green</option>
-             
+            <option value="random">Random</option>
+
           </select>
           </td></tr>
         <tr>
@@ -206,6 +199,7 @@ border-radius: 5px;
   <br>
   <br>
   <br>
+
   <script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
 <script>
 var queryString = decodeURIComponent(window.location.search);
@@ -229,7 +223,36 @@ var queryString = decodeURIComponent(window.location.search);
     document.getElementById("amount").min =1;
   }
 </script>
+<script>
+$(document).ready(function() {
+  
+  $.getJSON('https://spreadsheets.google.com/feeds/list/1KOP9INReCIUW_WM0-3UEy906wYD7tC1C_CjKGEyVBto/od6/public/values?alt=json', function(json){
+        
+        for (var i = 0; i < json.feed.entry.length; i++) {
+         
+        var itemValue = json.feed.entry[i].gsx$filamentcolor.$t.toString();
+// get reference to select element
+var sel = document.getElementById('color');
 
+// create new option element
+var opt = document.createElement('option');
+
+// create text node to add to option element (opt)
+opt.appendChild( document.createTextNode(itemValue) );
+
+// set value property of opt
+opt.value = itemValue; 
+
+// add opt to end of select box (sel)
+sel.appendChild(opt); 
+        }
+       
+        
+      
+        
+      
+    });
+  });</script>
 </body>
 
 
