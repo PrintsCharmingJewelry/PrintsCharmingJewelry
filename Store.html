@@ -64,10 +64,16 @@
 
 </head>
   <script>
-   	function sendImage(IMG){
-
+   	function sendImage(IMG, ispack){
+          var pack = ispack;
+          if(pack == "TRUE"){
+            pack = true;
+          } 
+          else{
+            pack = false;
+          }
           var value1= IMG;
-          var queryString = "?para1=" + value1;
+          var queryString = "?para1=" + value1+ "&isPack=" +pack;
           window.location.href = "Premade_Order.html" + queryString;
     }
   </script>
@@ -103,32 +109,31 @@
      
     </table>
     <script>
-     
-$(document).ready(function() {
-
+      $(document).ready(function() {
       
-          var c = 0;
-          var r = 0;
-          var table = document.getElementById("dataContent");
-          var row = table.insertRow(r);
-      $.getJSON('https://spreadsheets.google.com/feeds/list/1KOP9INReCIUW_WM0-3UEy906wYD7tC1C_CjKGEyVBto/od6/public/values?alt=json', function(json) {
-        
-        for (var i = 0; i < json.feed.entry.length; i++) {
-    
-          if(i % 4 === 0){
-          c = 0;
-          r++;
-          row = table.insertRow(r);
-         }
-          var cell = row.insertCell(c);
-          cell.innerHTML = '<img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" onclick="sendImage(\''+json.feed.entry[i].gsx$url.$t+'\')"src="' + json.feed.entry[i].gsx$url.$t + '" height=200px width=200px><h6 class="details">Prints Charming</h6><h6 class="name">' + json.feed.entry[i].gsx$name.$t + '</h6><h6 class="details">'+ json.feed.entry[i].gsx$price.$t+'</h6>';
-         c = c + 1;
-         
-        }
-      
-      });
-    
-});</script>
+            
+                var c = 0;
+                var r = 0;
+                var table = document.getElementById("dataContent");
+                var row = table.insertRow(r);
+            $.getJSON('https://spreadsheets.google.com/feeds/list/1KOP9INReCIUW_WM0-3UEy906wYD7tC1C_CjKGEyVBto/od6/public/values?alt=json', function(json) {
+              
+              for (var i = 0;  i<8; i++) {
+          
+                if(i % 4 === 0){
+                c = 0;
+                r++;
+                row = table.insertRow(r);
+               }
+                var cell = row.insertCell(c);
+                cell.innerHTML = '<img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" onclick="sendImage(\''+json.feed.entry[i].gsx$url.$t+'\',\''+json.feed.entry[i].gsx$ispack.$t+'\')"src="' + json.feed.entry[i].gsx$url.$t + '" height=200px width=200px><h6 class="details">Prints Charming</h6><h6 class="name">' + json.feed.entry[i].gsx$name.$t + '</h6><h6 class="details">'+ json.feed.entry[i].gsx$price.$t+'</h6>';
+               c = c + 1;
+               
+              }
+            
+            });
+          
+      });</script>
 
 </body>
 

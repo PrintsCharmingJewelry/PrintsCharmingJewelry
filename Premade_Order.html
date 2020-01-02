@@ -206,18 +206,30 @@ border-radius: 5px;
   <br>
   <br>
   <script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
-</body>
-
 <script>
-  var queryString = decodeURIComponent(window.location.search);
+var queryString = decodeURIComponent(window.location.search);
   queryString = queryString.substring(1);
   var queries = queryString.split("&");
-  var queries = queryString.split("=");
-  document.getElementById("blah").src = queries[1];
-  document.getElementById("image").value = queries[1];
-  if(queries[1]== 'VideoGamePack.jpg'){
+  var queries2 = ["default","default"];
+  
+  for(var i = 0; i < queries.length; i++){
+   if(queries[i].indexOf("=") >=0){
+     var dataToSend = queries[i].split('=');
+     queries2.push(dataToSend[0]);
+     queries2.push(dataToSend[1]);
+   }
+   
+  }
+
+
+  document.getElementById("blah").src = queries2[3];
+  document.getElementById("image").value = queries2[3];
+  if(queries2[5]== 'true'){
     document.getElementById("amount").min =1;
   }
 </script>
+
+</body>
+
 
 </html>
