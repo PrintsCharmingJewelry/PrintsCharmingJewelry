@@ -59,6 +59,13 @@
     background-color: white;
     border: 0;
   }
+  .listItem{
+    display:block; 
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:10px;
+    margin-bottom:10px;
+  }
 
   table {
     border-collapse: collapse;
@@ -176,7 +183,8 @@
               row = table.insertRow(r);
              }
               var cell = row.insertCell(c);
-              cell.innerHTML = '<img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" onclick="sendImage(\''+json.feed.entry[i].gsx$url.$t+'\',\''+json.feed.entry[i].gsx$issingle.$t+'\')"src="' + json.feed.entry[i].gsx$url.$t + '" height=200px width=200px><h6 class="details">'+json.feed.entry[i].gsx$type.$t+'</h6><h6 class="name">' + json.feed.entry[i].gsx$name.$t + '</h6><h6 class="details">'+ json.feed.entry[i].gsx$price.$t+'</h6>';
+      
+              cell.innerHTML = '<img class="listItem" onclick="sendImage(\''+json.feed.entry[i].gsx$url.$t+'\',\''+json.feed.entry[i].gsx$issingle.$t+'\')"src="' + json.feed.entry[i].gsx$url.$t + '" height=200px width=200px><h6 class="details">'+json.feed.entry[i].gsx$type.$t+'</h6><h6 class="name">' + json.feed.entry[i].gsx$name.$t + '</h6><h6 class="details">'+ json.feed.entry[i].gsx$price.$t+'</h6>';
              c = c + 1;
              
             }
