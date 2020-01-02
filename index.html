@@ -77,7 +77,19 @@
     padding-left:20px;
     font-size:25px;
   }
-  
+  .name{
+    font-family: 'enchanted_landregular';
+    padding:0px;
+    color: #558245;
+    font-size:30px;
+    
+  }
+  .details{
+  	font-family: 'enchanted_landregular';
+    padding:0px;
+ 
+    font-size:25px;
+  }
 </style>
 <script>
 	function sendImage(IMG){
@@ -141,23 +153,10 @@
   	 <div align="center" style="background-color: #CCCCCC;">
     <h1 style="color:white; font-size: 50px; padding:5px">Featured Key-Chains</h1>
   </div>
-    <table style=" text-align: center; background-color:white; ">
-      <tr>
 
-        <td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="3D_Cube.JPG" alt="keychain 1" height=200px width=200px onclick="sendImage('3D_Cube.JPG')" /><p>Prints Charming</p><h6>3D Cube</h6><p>$4.99</p></td>
-        <td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Halo3.JPG" alt="keychain 2" height=200px width=200px onclick="sendImage('Halo3.JPG')"/><p>Prints Charming</p><h6>Halo 3 Logo</h6><p>$4.99</p></td>
-        <td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Heart.JPG" alt="keychain 3" height=200px width=200px onclick="sendImage('Heart.JPG')"/><p>Prints Charming</p><h6>Heart</h6><p>$4.99</p></td>
-        <td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Terraria_Tree.JPG" alt="keychain 4" height=200px width=200px onclick="sendImage('Terraria_Tree.JPG')"/><p>Prints Charming</p><h6>Terraria Tree</h6><p>$4.99</p></td>
-      </tr>
-      <tr>
-        
-        <td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="LongMan.JPG" alt="keychain 5" height=200px width=200px onclick="sendImage('LongMan.JPG')"/><p>Prints Charming</p><h6>Long Man</h6><p>$4.99 </p></td>
-        <td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="Skyrim_Logo.JPG" alt="keychain 6" height=200px width=200px onclick="sendImage('Skyrim_Logo.JPG')"/><p>Prints Charming</p><h6>Skyrim Logo</h6><p>$4.99</p></td>
-        <td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="VideoGamePack.jpg" alt="keychain 7" height=200px width=200px onclick="sendImage('VideoGamePack.jpg')"/><p>Prints Charming</p><h6>Video Game Mystery Pack</h6><p>$9.99 </p></td>
-        
-      </tr>
+    <table id="dataContent" style=" text-align: center; background-color:white; ">
+     
     </table>
-    
     
     
     <br>
@@ -165,6 +164,32 @@
     <br>
     <br>
   </div>
-</body>
 
+  <script>
+    $(document).ready(function() {
+    
+          
+              var c = 0;
+              var r = 0;
+              var table = document.getElementById("dataContent");
+              var row = table.insertRow(r);
+          $.getJSON('https://spreadsheets.google.com/feeds/list/1KOP9INReCIUW_WM0-3UEy906wYD7tC1C_CjKGEyVBto/od6/public/values?alt=json', function(json) {
+            
+            for (var i = 0;  i<8; i++) {
+        
+              if(i % 4 === 0){
+              c = 0;
+              r++;
+              row = table.insertRow(r);
+             }
+              var cell = row.insertCell(c);
+              cell.innerHTML = '<img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" onclick="sendImage(\''+json.feed.entry[i].gsx$url.$t+'\')"src="' + json.feed.entry[i].gsx$url.$t + '" height=200px width=200px><h6 class="details">Prints Charming</h6><h6 class="name">' + json.feed.entry[i].gsx$name.$t + '</h6><h6 class="details">'+ json.feed.entry[i].gsx$price.$t+'</h6>';
+             c = c + 1;
+             
+            }
+          
+          });
+        
+    });</script>
+</body>
 </html>
