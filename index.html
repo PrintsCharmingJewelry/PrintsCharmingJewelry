@@ -63,20 +63,7 @@
   table {
     border-collapse: collapse;
   }
-    h6{
-      font-family: 'enchanted_landregular';
-    padding:0px;
-    padding-left:20px;
-    color: #558245;
-    font-size:30px;
-  }
-  p{
-    font-family: 'enchanted_landregular';
-    font-size:medium;
-    padding:0px;
-    padding-left:20px;
-    font-size:25px;
-  }
+
   .name{
     font-family: 'enchanted_landregular';
     padding:0px;
@@ -87,21 +74,21 @@
   .details{
   	font-family: 'enchanted_landregular';
     padding:0px;
- 
+    color: #242423;
     font-size:25px;
   }
 </style>
 <script>
-	function sendImage(IMG, ispack){
-          var pack = ispack;
-          if(pack == "TRUE"){
-            pack = true;
+	function sendImage(IMG, isSingle){
+          var single = isSingle;
+          if(single == "TRUE"){
+            single = true;
           } 
           else{
-            pack = false;
+            single = false;
           }
           var value1= IMG;
-          var queryString = "?para1=" + value1+ "&isPack=" +pack;
+          var queryString = "?para1=" + value1+ "&issingle=" +single;
           window.location.href = "Premade_Order.html" + queryString;
     }
 </script>
@@ -189,7 +176,7 @@
               row = table.insertRow(r);
              }
               var cell = row.insertCell(c);
-              cell.innerHTML = '<img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" onclick="sendImage(\''+json.feed.entry[i].gsx$url.$t+'\',\''+json.feed.entry[i].gsx$ispack.$t+'\')"src="' + json.feed.entry[i].gsx$url.$t + '" height=200px width=200px><h6 class="details">Prints Charming</h6><h6 class="name">' + json.feed.entry[i].gsx$name.$t + '</h6><h6 class="details">'+ json.feed.entry[i].gsx$price.$t+'</h6>';
+              cell.innerHTML = '<img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" onclick="sendImage(\''+json.feed.entry[i].gsx$url.$t+'\',\''+json.feed.entry[i].gsx$issingle.$t+'\')"src="' + json.feed.entry[i].gsx$url.$t + '" height=200px width=200px><h6 class="details">'+json.feed.entry[i].gsx$type.$t+'</h6><h6 class="name">' + json.feed.entry[i].gsx$name.$t + '</h6><h6 class="details">'+ json.feed.entry[i].gsx$price.$t+'</h6>';
              c = c + 1;
              
             }
