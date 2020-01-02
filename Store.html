@@ -47,13 +47,14 @@
   table {
     border-collapse: collapse;
   }
-    h6{
+    .name{
     font-family: 'enchanted_landregular';
     padding:0px;
     color: #558245;
     font-size:30px;
+    
   }
-  p{
+  .details{
   	font-family: 'enchanted_landregular';
     padding:0px;
  
@@ -131,7 +132,7 @@ $(document).ready(function() {
          // $("#dataContent").append("<tbody><tr>");
          }
           var cell = row.insertCell(c);
-          cell.innerHTML = '<img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" onclick="sendImage(\''+json.feed.entry[i].gsx$url.$t+'\')"src="' + json.feed.entry[i].gsx$url.$t + '" height=200px width=200px><p>Prints Charming</p><h6>' + json.feed.entry[i].gsx$name.$t + '</h6><p>'+ json.feed.entry[i].gsx$price.$t+'</p>';
+          cell.innerHTML = '<img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" onclick="sendImage(\''+json.feed.entry[i].gsx$url.$t+'\')"src="' + json.feed.entry[i].gsx$url.$t + '" height=200px width=200px><h6 class="details">Prints Charming</h6><h6 class="name">' + json.feed.entry[i].gsx$name.$t + '</h6><h6 class="details">'+ json.feed.entry[i].gsx$price.$t+'</h6>';
          c = c + 1;
           // $("#dataContent").append('<td><img style="display:block; margin-left:20px;margin-right:20px;margin-top:10px;margin-bottom:10px;" src="' + json.feed.entry[i].gsx$url.$t + '" height=200px width=200px><p>Prints Charming</p><h6>' + json.feed.entry[i].gsx$name.$t + '</h6><p>$---</p></td>');
          
