@@ -27,7 +27,7 @@
     input,
     select {
       
-      background-color: #cccccc;
+      background-color: white;
 
       padding: 1px;
 border-radius: 5px;
@@ -107,7 +107,9 @@ border-radius: 5px;
       State = input.value;
       var input = document.getElementById('Zipcode');
       Zipcode = input.value;
-      document.forms["customOrder"].action = 'mailto:printscharmingjewelryllc%40gmail.com?subject=Custom%20Order&body=Image%3A' + image + '%0Amount%3A' + amount + '%0AColor%3A+' + color + '%0AAddress%3A' + Homeaddress +'%0A'+ Homeaddress2+ '%0ACity%3A+' + City + '%0AState%3A' + State + '%0AZip%3A' + Zipcode;
+      var input = document.getElementById('email');
+      email = input.value;
+      document.forms["customOrder"].action = 'mailto:printscharmingjewelryllc%40gmail.com?subject=Custom%20Order&body=Image%3A' + image + '%0Amount%3A' + amount + '%0AColor%3A+' + color + '%0AAddress%3A' + Homeaddress +'%0A'+ Homeaddress2+ '%0ACity%3A+' + City + '%0AState%3A' + State + '%0AZip%3A' + Zipcode +'%0AEmail%3A' + email;
       document.forms["customOrder"].submit();
       on();
     }
@@ -115,11 +117,12 @@ border-radius: 5px;
 </head>
 
 <body>
-  <header class="topnav">
-    <img src="BusinessLogo.png" alt="logo" style="float:left; padding-right: 20px;" height=100px />
-    <nav>
-      <UL>
-        <a href="index.html">
+  <header class="topnav" style="padding-bottom: 0px;"><div style=" float:left; padding-right: 20px;"><img src="BusinessLogo.png"style="float:left; padding-right: 0px;" alt="logo"  height=100px /><h1 style="font-size: 60px; float:right; padding-right:20px;">Prints Charming</h1></div>
+  </header>
+  <header class="topnav" style="padding-bottom: 0px;" >
+    <nav style="text-align: center;" >
+      <UL style="display:inline-block;">
+        <a  href="">
           <li>Home</li>
         </a>
         <a href="Store.html">
@@ -133,7 +136,7 @@ border-radius: 5px;
         </a>
       </UL>
     </nav>
-  </header>
+     </header>
   <br>
   
 
@@ -144,7 +147,7 @@ border-radius: 5px;
           <input id="image" type='hidden' name="imageChoice" value="none" /></td>
     </table>
     <br>
-    <div id="specifics" style=" background-color: #CCCCCC;display:block;">
+    <div id="specifics" style=" background-color: white; display:block;">
       <table align="center" style="background-color:white; ">
         <tr>
           <td><label style="font-size: 15px;
@@ -157,12 +160,22 @@ border-radius: 5px;
             <option value="random">Random</option>
 
           </select>
-          </td></tr>
+          </td>
+        </tr>
         <tr>
           <td>
-            <label  for="email">Email:</label>
+          <label style="font-weight: bold;font-size:15px;" for="name">Name:</label>
+          <input  name="name" id="name" type="text" required> 
+        </td>
+        </tr>
+        <tr>
+          <td>
+            <label style="font-weight: bold;font-size:15px;" for="email">Email:</label>
             <input  name="email" id="email" type="text" required>
-
+          </td>
+        </tr>
+          <tr>
+            <td>
             <p style="font-weight: bold;font-size:15px;">Shipping Address:</p>
           
              <label  for="Homeaddress">Street Address Line 1:</label>
