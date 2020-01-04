@@ -12,11 +12,11 @@
 
 
   box-sizing: border-box;
-  background-color: #cccccc;
+  background-color: #afafaf;
 
   }
   input[type=text] {
-    background-color: #cccccc;
+    background-color: #afafaf;
   width: 99%;
  padding:10px;
 
@@ -26,7 +26,7 @@
   td {
 
     border: 0;
-    background-color: white;
+    background-color: ;
   }
 
   table{
@@ -120,24 +120,24 @@
      </header>
  <br>
  <br>
-  <div align="center" style="background-color: #CCCCCC;">
+  <div align="center" style="background-color: white;">
     
-    <form id="contactUsForm" name="contactUsForm" method="post" >
+    <form id="contactUsForm" name="contactUsForm" method="post" style="" >
       <table style="text-align: right;">
         <tr>
-          <td style="padding:10px;">Full Name:</td>
+          <td style=" font-weight: bold; font-size: 15px; padding:10px;">Full Name:</td>
           <td style="padding:10px;"><input type="text" id="first_name" name="first_name" rows="1" cols="100" required></td>
         </tr>
         <tr>
-          <td style="padding:10px; ">Email:  </td>
+          <td style="font-weight: bold;  font-size: 15px; padding:10px; ">Email:  </td>
           <td style="padding:10px;"><input type="text" id="email_address" name="email_address" rows="1" cols="100"></td>
         </tr>
         <tr>
-          <td style="padding:10px;" >Message: </td>  
+          <td style="font-weight: bold; font-size: 15px; padding:10px;" >Message: </td>  
           <td style="width:800px;padding:10px"><textarea  id="comments" name="comments"rows="10" ></textarea></td>
         </tr>
         <tr>
-          <td align="center"><button style="display:block;" type="submit" value="Submit" onclick="submitForm()">Send Email</button></td>
+          <td align="center"><button style="font-size: 15px; display:block;" type="submit" value="Submit" onclick="submitForm()">Send Email</button></td>
         </tr>
       </table>
       <div id="overlay" onclick="off()">
@@ -145,6 +145,8 @@
       </div>
     </form>
   </div>
+  <br>
+  <br>
 
 </body>
 
