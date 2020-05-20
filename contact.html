@@ -26,7 +26,7 @@
   td {
 
     border: 0;
-    background-color: ;
+    background-color: #7e7e7e;
   }
 
   table{
@@ -106,8 +106,8 @@
         <a  href="index.html">
           <li>Home</li>
         </a>
-        <a href="Store.html">
-          <li>Store</li>
+        <a href="https://www.etsy.com/shop/PrintsCharmingJelwry">
+          <li>Esty Store</li>
         </a>
         <a href="Custom_Order.html">
           <li>Custom Orders</li>
@@ -121,8 +121,8 @@
  <br>
  <br>
   <div align="center" style="background-color: white;">
-    
-    <form id="contactUsForm" name="contactUsForm" method="post" style="" >
+   
+    <form id="contactUsForm" name="contactUsForm" method="POST" class="gform" data-email="printscharmingjewelryllc@gmail.com"  action="https://script.google.com/macros/s/AKfycbzsYt_hPzhj6eUHFTJNOAWbrtd1fXy3sFUxKBolsivqxpR2feU/exec">
       <table style="text-align: right;">
         <tr>
           <td style=" font-weight: bold; font-size: 15px; padding:10px;">Full Name:</td>
@@ -137,7 +137,7 @@
           <td style="width:800px;padding:10px"><textarea  id="comments" name="comments"rows="10" ></textarea></td>
         </tr>
         <tr>
-          <td align="center"><button style="font-size: 15px; display:block;" type="submit" value="Submit" onclick="submitForm()">Send Email</button></td>
+          <td align="center"><button style="font-size: 15px; display:block;" type="submit" value="Submit">Send Email</button></td>
         </tr>
       </table>
       <div id="overlay" onclick="off()">
@@ -147,7 +147,7 @@
   </div>
   <br>
   <br>
-
+  <script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
 </body>
 
 </html>
