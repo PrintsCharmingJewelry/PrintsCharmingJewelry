@@ -112,8 +112,8 @@
         <a class="active" href="">
           <li>Home</li>
         </a>
-        <a href="Store.html">
-          <li>Store</li>
+        <a href="https://www.etsy.com/shop/PrintsCharmingJelwry">
+          <li>Esty Store</li>
         </a>
         <a href="Custom_Order.html">
           <li>Custom Orders</li>
@@ -153,7 +153,7 @@
   <br>
   <div align="center" style="background-color: white;">
   	 <div align="center" style="background-color: white;">
-    <h1 style="color:white; font-size: 50px; padding:5px">Featured Items</h1>
+    <h1 style="color:white; font-size: 50px; padding:5px">Gallery</h1>
   </div>
 
     <table id="dataContent" style=" text-align: center; background-color:white; ">
@@ -186,7 +186,7 @@
              }
               var cell = row.insertCell(c);
       
-              cell.innerHTML = '<img class="listItem" onclick="sendImage(\''+json.feed.entry[i].gsx$url.$t+'\',\''+json.feed.entry[i].gsx$issingle.$t+'\')"src="' + json.feed.entry[i].gsx$url.$t + '" height=200px width=200px><h6 class="details">'+json.feed.entry[i].gsx$type.$t+'</h6><h6 class="name">' + json.feed.entry[i].gsx$name.$t + '</h6><h6 class="details">'+ json.feed.entry[i].gsx$price.$t+'</h6>';
+              cell.innerHTML = '<img class="listItem" onclick="sendImage(\''+json.feed.entry[i].gsx$url.$t+'\',\''+json.feed.entry[i].gsx$issingle.$t+'\')"src="' + json.feed.entry[i].gsx$url.$t + '" height=200px width=200px>';
              c = c + 1;
              
             }
